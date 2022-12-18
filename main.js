@@ -14,7 +14,6 @@ var label_size,
   label_rotRand,
   label_leafProb,
   label_seed,
-  label_source,
   label_source2;
 
 var div_inputs;
@@ -34,17 +33,17 @@ function setup() {
   slider_size = createSlider(100, 200, 130, 1);
   slider_size.position(10, 10);
   slider_level = createSlider(1, 20, 11, 1);
-  slider_level.position(10, 30);
+  slider_level.position(10, 40);
   slider_rot = createSlider(0, PI / 2, PI / 2 / 4, PI / 2 / (3 * 5 * 8));
-  slider_rot.position(10, 50);
+  slider_rot.position(10, 70);
   slider_lenRand = createSlider(0, 1, 1, 0.01);
-  slider_lenRand.position(10, 70);
+  slider_lenRand.position(10, 100);
   slider_branchProb = createSlider(0, 2, 1, 0.01);
-  slider_branchProb.position(10, 90);
+  slider_branchProb.position(10, 130);
   slider_rotRand = createSlider(0, 1, 0.1, 0.01);
-  slider_rotRand.position(10, 110);
+  slider_rotRand.position(10, 160);
   slider_leafProb = createSlider(0, 1, 0.5, 0.01);
-  slider_leafProb.position(10, 130);
+  slider_leafProb.position(10, 190);
 
   slider_size.input(function () {
     readInputs(true);
@@ -69,27 +68,28 @@ function setup() {
   });
 
   label_size = createSpan("Size");
-  label_size.position(150, 10);
+  label_size.position(150, 15);
   label_level = createSpan("Recursion level");
-  label_level.position(150, 30);
+  label_level.position(150, 45);
   label_rot = createSpan("Split angle");
-  label_rot.position(150, 50);
+  label_rot.position(150, 75);
   label_lenRand = createSpan("Length variation");
-  label_lenRand.position(150, 70);
+  label_lenRand.position(150, 105);
   label_branchProb = createSpan("Split probability");
-  label_branchProb.position(150, 90);
+  label_branchProb.position(150, 135);
   label_rotRand = createSpan("Split rotation variation");
-  label_rotRand.position(150, 110);
+  label_rotRand.position(150, 165);
   label_leafProb = createSpan("Flower probability");
-  label_leafProb.position(150, 130);
+  label_leafProb.position(150, 195);
 
   button_seed = createButton("Watch it grow!");
-  button_seed.position(10, 160);
+  button_seed.position(10, 230);
   button_seed.mousePressed(function () {
     startGrow();
   });
 
-  div_inputs = createDiv("");
+  label_source2 = createA("./3d.html", "3D Version");
+  label_source2.position(10, 280);
 
   readInputs(false);
   startGrow();
